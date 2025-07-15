@@ -14,13 +14,13 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class LionTestParametrize {
 
-    @Parameterized.Parameter()
+    @Parameterized.Parameter(0)
     public String sex;
 
     @Parameterized.Parameter(1)
     public boolean expectedMane;
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] data() {
         return new Object[][]{
                 {"Самец", true},
@@ -39,8 +39,8 @@ public class LionTestParametrize {
     @Test
     public void testDoesHaveMane() throws Exception {
         Lion lion = new Lion(sex, feline);
+        // Проверяем только поведение метода
         assertEquals(expectedMane, lion.doesHaveMane());
-        assertEquals(expectedMane, lion.hasMane); // если hasMane public
     }
 }
 

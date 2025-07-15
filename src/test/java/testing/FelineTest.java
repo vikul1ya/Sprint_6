@@ -25,7 +25,7 @@ public class FelineTest {
         assertEquals(1, feline.getKittens());
     }
     @Test
-    public void testGetKittens2() {
+    public void testGetKittensRandom() {
         int randomInt = (int)(Math.random()*10);
         assertEquals(randomInt, feline.getKittens(randomInt));
     }
